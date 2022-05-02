@@ -16,6 +16,8 @@
 		CC17CBC728206A2300940B59 /* ImgCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC17CBC628206A2300940B59 /* ImgCacheManager.swift */; };
 		CC17CBCA28206C1800940B59 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC17CBC928206C1800940B59 /* MainTabBarController.swift */; };
 		CC17CBCD28206D4500940B59 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC17CBCC28206D4500940B59 /* FavoriteViewController.swift */; };
+		CC17CBD02820732500940B59 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC17CBCF2820732500940B59 /* DetailViewController.swift */; };
+		CC17CBD4282079E300940B59 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC17CBD3282079E300940B59 /* MainTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		CC17CBC628206A2300940B59 /* ImgCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgCacheManager.swift; sourceTree = "<group>"; };
 		CC17CBC928206C1800940B59 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		CC17CBCC28206D4500940B59 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
+		CC17CBCF2820732500940B59 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		CC17CBD3282079E300940B59 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +69,7 @@
 				CC17CBCB28206C2300940B59 /* TabBarModule */,
 				CC17CBBF2820694E00940B59 /* MainModule */,
 				CC17CBCE28206D5500940B59 /* FavoriteModule */,
+				CC17CBD12820732900940B59 /* DetailModule */,
 				CC17CBC828206A2F00940B59 /* Services */,
 				CC17CBC12820699600940B59 /* Resources */,
 				CC17CBC02820695F00940B59 /* SupportFiles */,
@@ -75,6 +80,7 @@
 		CC17CBBF2820694E00940B59 /* MainModule */ = {
 			isa = PBXGroup;
 			children = (
+				CC17CBD2282079C100940B59 /* Cell */,
 				CC17CBAF2820690F00940B59 /* MainViewController.swift */,
 			);
 			path = MainModule;
@@ -122,6 +128,22 @@
 				CC17CBCC28206D4500940B59 /* FavoriteViewController.swift */,
 			);
 			path = FavoriteModule;
+			sourceTree = "<group>";
+		};
+		CC17CBD12820732900940B59 /* DetailModule */ = {
+			isa = PBXGroup;
+			children = (
+				CC17CBCF2820732500940B59 /* DetailViewController.swift */,
+			);
+			path = DetailModule;
+			sourceTree = "<group>";
+		};
+		CC17CBD2282079C100940B59 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CC17CBD3282079E300940B59 /* MainTableViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,9 +215,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC17CBD02820732500940B59 /* DetailViewController.swift in Sources */,
 				CC17CBC3282069C500940B59 /* NetworkManager.swift in Sources */,
 				CC17CBB02820690F00940B59 /* MainViewController.swift in Sources */,
 				CC17CBC5282069D700940B59 /* StorageManager.swift in Sources */,
+				CC17CBD4282079E300940B59 /* MainTableViewCell.swift in Sources */,
 				CC17CBCA28206C1800940B59 /* MainTabBarController.swift in Sources */,
 				CC17CBAC2820690F00940B59 /* AppDelegate.swift in Sources */,
 				CC17CBC728206A2300940B59 /* ImgCacheManager.swift in Sources */,

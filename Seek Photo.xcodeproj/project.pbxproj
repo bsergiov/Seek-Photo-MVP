@@ -20,9 +20,13 @@
 		CC17CBD4282079E300940B59 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC17CBD3282079E300940B59 /* MainTableViewCell.swift */; };
 		CC17CBD62820823800940B59 /* FavoriteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC17CBD52820823800940B59 /* FavoriteCollectionViewCell.swift */; };
 		CC17CBD92820986600940B59 /* UIFont + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC17CBD82820986600940B59 /* UIFont + Extensions.swift */; };
+		CC17CBDD2820A47F00940B59 /* PictureModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC17CBDC2820A47F00940B59 /* PictureModel.swift */; };
+		D21A74662ACBCF61AB4368D3 /* Pods_Seek_Photo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39423ABDA52F44885D8571BF /* Pods_Seek_Photo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A3912B06FCFA09647D9C3F5 /* Pods-Seek Photo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Seek Photo.release.xcconfig"; path = "Target Support Files/Pods-Seek Photo/Pods-Seek Photo.release.xcconfig"; sourceTree = "<group>"; };
+		39423ABDA52F44885D8571BF /* Pods_Seek_Photo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Seek_Photo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC17CBA82820690F00940B59 /* Seek Photo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Seek Photo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC17CBAB2820690F00940B59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CC17CBAD2820690F00940B59 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +42,8 @@
 		CC17CBD3282079E300940B59 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		CC17CBD52820823800940B59 /* FavoriteCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCollectionViewCell.swift; sourceTree = "<group>"; };
 		CC17CBD82820986600940B59 /* UIFont + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont + Extensions.swift"; sourceTree = "<group>"; };
+		CC17CBDC2820A47F00940B59 /* PictureModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureModel.swift; sourceTree = "<group>"; };
+		CED883107360D77AFBD394E1 /* Pods-Seek Photo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Seek Photo.debug.xcconfig"; path = "Target Support Files/Pods-Seek Photo/Pods-Seek Photo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,17 +51,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D21A74662ACBCF61AB4368D3 /* Pods_Seek_Photo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		61A93A1ADFC23FCB74CDC24D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CED883107360D77AFBD394E1 /* Pods-Seek Photo.debug.xcconfig */,
+				0A3912B06FCFA09647D9C3F5 /* Pods-Seek Photo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		CC17CB9F2820690F00940B59 = {
 			isa = PBXGroup;
 			children = (
 				CC17CBAA2820690F00940B59 /* Seek Photo */,
 				CC17CBA92820690F00940B59 /* Products */,
+				61A93A1ADFC23FCB74CDC24D /* Pods */,
+				F0D15FDC5DA2C8BF8404E8D4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,6 +88,7 @@
 		CC17CBAA2820690F00940B59 /* Seek Photo */ = {
 			isa = PBXGroup;
 			children = (
+				CC17CBDE2820A48800940B59 /* Models */,
 				CC17CBCB28206C2300940B59 /* TabBarModule */,
 				CC17CBBF2820694E00940B59 /* MainModule */,
 				CC17CBCE28206D5500940B59 /* FavoriteModule */,
@@ -176,6 +195,22 @@
 			path = UIKit;
 			sourceTree = "<group>";
 		};
+		CC17CBDE2820A48800940B59 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CC17CBDC2820A47F00940B59 /* PictureModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F0D15FDC5DA2C8BF8404E8D4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				39423ABDA52F44885D8571BF /* Pods_Seek_Photo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -183,9 +218,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CC17CBBC2820691200940B59 /* Build configuration list for PBXNativeTarget "Seek Photo" */;
 			buildPhases = (
+				E3C391C9C4E27F6EF49F9B00 /* [CP] Check Pods Manifest.lock */,
 				CC17CBA42820690F00940B59 /* Sources */,
 				CC17CBA52820690F00940B59 /* Frameworks */,
 				CC17CBA62820690F00940B59 /* Resources */,
+				CAAF06E3171667AA539EEC55 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -240,12 +277,55 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		CAAF06E3171667AA539EEC55 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Seek Photo/Pods-Seek Photo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Seek Photo/Pods-Seek Photo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Seek Photo/Pods-Seek Photo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E3C391C9C4E27F6EF49F9B00 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Seek Photo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CC17CBA42820690F00940B59 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				CC17CBD92820986600940B59 /* UIFont + Extensions.swift in Sources */,
+				CC17CBDD2820A47F00940B59 /* PictureModel.swift in Sources */,
 				CC17CBD02820732500940B59 /* DetailViewController.swift in Sources */,
 				CC17CBC3282069C500940B59 /* NetworkManager.swift in Sources */,
 				CC17CBB02820690F00940B59 /* MainViewController.swift in Sources */,
@@ -379,6 +459,7 @@
 		};
 		CC17CBBD2820691200940B59 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CED883107360D77AFBD394E1 /* Pods-Seek Photo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -405,6 +486,7 @@
 		};
 		CC17CBBE2820691200940B59 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A3912B06FCFA09647D9C3F5 /* Pods-Seek Photo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

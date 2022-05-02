@@ -9,23 +9,27 @@
 /* Begin PBXBuildFile section */
 		CC17CBAC2820690F00940B59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC17CBAB2820690F00940B59 /* AppDelegate.swift */; };
 		CC17CBAE2820690F00940B59 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC17CBAD2820690F00940B59 /* SceneDelegate.swift */; };
-		CC17CBB02820690F00940B59 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC17CBAF2820690F00940B59 /* ViewController.swift */; };
+		CC17CBB02820690F00940B59 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC17CBAF2820690F00940B59 /* MainViewController.swift */; };
 		CC17CBB52820691200940B59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC17CBB42820691200940B59 /* Assets.xcassets */; };
 		CC17CBC3282069C500940B59 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC17CBC2282069C500940B59 /* NetworkManager.swift */; };
 		CC17CBC5282069D700940B59 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC17CBC4282069D700940B59 /* StorageManager.swift */; };
 		CC17CBC728206A2300940B59 /* ImgCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC17CBC628206A2300940B59 /* ImgCacheManager.swift */; };
+		CC17CBCA28206C1800940B59 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC17CBC928206C1800940B59 /* MainTabBarController.swift */; };
+		CC17CBCD28206D4500940B59 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC17CBCC28206D4500940B59 /* FavoriteViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CC17CBA82820690F00940B59 /* Seek Photo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Seek Photo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC17CBAB2820690F00940B59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CC17CBAD2820690F00940B59 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CC17CBAF2820690F00940B59 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CC17CBAF2820690F00940B59 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		CC17CBB42820691200940B59 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CC17CBB92820691200940B59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC17CBC2282069C500940B59 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		CC17CBC4282069D700940B59 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		CC17CBC628206A2300940B59 /* ImgCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgCacheManager.swift; sourceTree = "<group>"; };
+		CC17CBC928206C1800940B59 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		CC17CBCC28206D4500940B59 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +62,9 @@
 		CC17CBAA2820690F00940B59 /* Seek Photo */ = {
 			isa = PBXGroup;
 			children = (
+				CC17CBCB28206C2300940B59 /* TabBarModule */,
 				CC17CBBF2820694E00940B59 /* MainModule */,
+				CC17CBCE28206D5500940B59 /* FavoriteModule */,
 				CC17CBC828206A2F00940B59 /* Services */,
 				CC17CBC12820699600940B59 /* Resources */,
 				CC17CBC02820695F00940B59 /* SupportFiles */,
@@ -69,7 +75,7 @@
 		CC17CBBF2820694E00940B59 /* MainModule */ = {
 			isa = PBXGroup;
 			children = (
-				CC17CBAF2820690F00940B59 /* ViewController.swift */,
+				CC17CBAF2820690F00940B59 /* MainViewController.swift */,
 			);
 			path = MainModule;
 			sourceTree = "<group>";
@@ -100,6 +106,22 @@
 				CC17CBC628206A2300940B59 /* ImgCacheManager.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		CC17CBCB28206C2300940B59 /* TabBarModule */ = {
+			isa = PBXGroup;
+			children = (
+				CC17CBC928206C1800940B59 /* MainTabBarController.swift */,
+			);
+			path = TabBarModule;
+			sourceTree = "<group>";
+		};
+		CC17CBCE28206D5500940B59 /* FavoriteModule */ = {
+			isa = PBXGroup;
+			children = (
+				CC17CBCC28206D4500940B59 /* FavoriteViewController.swift */,
+			);
+			path = FavoriteModule;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,10 +194,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC17CBC3282069C500940B59 /* NetworkManager.swift in Sources */,
-				CC17CBB02820690F00940B59 /* ViewController.swift in Sources */,
+				CC17CBB02820690F00940B59 /* MainViewController.swift in Sources */,
 				CC17CBC5282069D700940B59 /* StorageManager.swift in Sources */,
+				CC17CBCA28206C1800940B59 /* MainTabBarController.swift in Sources */,
 				CC17CBAC2820690F00940B59 /* AppDelegate.swift in Sources */,
 				CC17CBC728206A2300940B59 /* ImgCacheManager.swift in Sources */,
+				CC17CBCD28206D4500940B59 /* FavoriteViewController.swift in Sources */,
 				CC17CBAE2820690F00940B59 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

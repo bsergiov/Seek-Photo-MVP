@@ -19,6 +19,7 @@
 		CC17CBD02820732500940B59 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC17CBCF2820732500940B59 /* DetailViewController.swift */; };
 		CC17CBD4282079E300940B59 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC17CBD3282079E300940B59 /* MainTableViewCell.swift */; };
 		CC17CBD62820823800940B59 /* FavoriteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC17CBD52820823800940B59 /* FavoriteCollectionViewCell.swift */; };
+		CC17CBD92820986600940B59 /* UIFont + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC17CBD82820986600940B59 /* UIFont + Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		CC17CBCF2820732500940B59 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		CC17CBD3282079E300940B59 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		CC17CBD52820823800940B59 /* FavoriteCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCollectionViewCell.swift; sourceTree = "<group>"; };
+		CC17CBD82820986600940B59 /* UIFont + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont + Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				CC17CBCE28206D5500940B59 /* FavoriteModule */,
 				CC17CBD12820732900940B59 /* DetailModule */,
 				CC17CBC828206A2F00940B59 /* Services */,
+				CC17CBDA2820987700940B59 /* Extensions */,
 				CC17CBC12820699600940B59 /* Resources */,
 				CC17CBC02820695F00940B59 /* SupportFiles */,
 			);
@@ -157,6 +160,22 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		CC17CBDA2820987700940B59 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CC17CBDB2820989200940B59 /* UIKit */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CC17CBDB2820989200940B59 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				CC17CBD82820986600940B59 /* UIFont + Extensions.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -226,6 +245,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC17CBD92820986600940B59 /* UIFont + Extensions.swift in Sources */,
 				CC17CBD02820732500940B59 /* DetailViewController.swift in Sources */,
 				CC17CBC3282069C500940B59 /* NetworkManager.swift in Sources */,
 				CC17CBB02820690F00940B59 /* MainViewController.swift in Sources */,

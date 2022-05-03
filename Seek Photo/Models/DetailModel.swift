@@ -14,4 +14,5 @@ class DetailModel: Object {
     @Persisted var img = Data()
     @Persisted var location = ""
     @Persisted var downloads = 0
+    @Persisted var isFavorite = false
 }

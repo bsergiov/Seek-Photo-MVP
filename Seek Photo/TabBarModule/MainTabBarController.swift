@@ -25,7 +25,7 @@ class MainTabBarController: UITabBarController {
     }
     
     private func setupItems() {
-        let mainViewController = MainViewController()
+        let mainViewController = ModelBuilder.createMainModule()
         let favoriteViewController = FavoriteViewController()
         
         let mainNc = UINavigationController(rootViewController: mainViewController)

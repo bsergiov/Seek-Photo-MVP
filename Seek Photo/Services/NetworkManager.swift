@@ -13,17 +13,44 @@ enum NetworkError: Error {
     case decodingError
 }
 
-class NetworkManager {
-    
-    static let shared = NetworkManager()
-    
-    private init() { }
+protocol NetworkManagerProtocol {
+    func fetch<T: Codable>(dataType: T.Type, completion: @escaping (Result<T,NetworkError>) -> Void)
+    func fetch<T: Codable>(dataType: T.Type, query: String, completion:  @escaping (Result<T, NetworkError>) -> Void)
+    func fetchData(from urlString: String, completion: @escaping(Result<Data, Error>) -> Void)
+}
+
+class NetworkManager: NetworkManagerProtocol {
     
     // MARK: - Generic Methodes fetch model
     func fetch<T: Codable>(dataType: T.Type, completion:  @escaping (Result<T, NetworkError>) -> Void) {
         
         let key = "qi7jMjsECyBY4ThTcsMxJHo444uhaswM7GoZZRxONxg"
         guard let url = URL(string: "https://api.unsplash.com/photos/random?page=1&client_id=\(key)&count=30") else {
+            completion(.failure(.invalidURL))
+            return
+        }
+        let request = URLRequest(url: url)
+        
+        URLSession.shared.dataTask(with: request) { data, _, error in
+            guard let data = data else {
+                completion(.failure(.noData))
+                return
+            }
+            do {
+                let decoder = JSONDecoder()
+                let type = try decoder.decode(T.self, from: data)
+                completion(.success(type))
+            } catch {
+                print(error)
+                completion(.failure(.decodingError))
+            }
+        }.resume()
+    }
+    
+    func fetch<T: Codable>(dataType: T.Type, query: String, completion:  @escaping (Result<T, NetworkError>) -> Void) {
+        
+        let key = "qi7jMjsECyBY4ThTcsMxJHo444uhaswM7GoZZRxONxg"
+        guard let url = URL(string: "https://api.unsplash.com/search/photos?page=1&client_id=\(key)&query=\(query)") else {
             completion(.failure(.invalidURL))
             return
         }

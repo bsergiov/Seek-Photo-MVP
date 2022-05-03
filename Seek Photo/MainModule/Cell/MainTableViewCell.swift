@@ -8,23 +8,19 @@
 import UIKit
 
 class MainTableViewCell: UITableViewCell {
-
+    
+    // MARK: - Public Properties
     static let id = "MainTableViewCell"
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-      
-    }
-    
-    // MARK: - Public Methodes
-    func setupCell() {
-        var content = defaultContentConfiguration()
-        content.text = "Ku"
-        content.image = UIImage(systemName: "person")
-        contentConfiguration = content
-    }
+    var presenter: MainTableViewCellPresenterProtocol!
+}
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+// MARK: - MainTableViewCellProtocol
+extension MainTableViewCell: MainTableViewCellProtocol {
+    func setContent(title: String, img: UIImage) {
+        var content = defaultContentConfiguration()
+        content.text = title
+        content.image = img
+        contentConfiguration = content
     }
 }

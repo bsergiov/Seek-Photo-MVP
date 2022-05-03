@@ -9,6 +9,9 @@ import UIKit
 
 class MainViewController: UIViewController {
     
+    // MARK: - Public Properties
+    var presenter: MainPresenterProtocol!
+    
     // MARK: - UI Elements
     lazy private var searcBar: UISearchController = {
         let searcher = UISearchController(searchResultsController: nil)
@@ -75,13 +78,15 @@ extension MainViewController {
 // MARK: - UITableViewDataSource
 extension MainViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        5
+        presenter.model?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MainTableViewCell.id,
                                                  for: indexPath) as! MainTableViewCell
-        cell.setupCell()
+        guard let photos = presenter.model else { return cell }
+        let presenterCell = MainTableViewCellPresenter(view: cell, model: photos[indexPath.row])
+        cell.presenter = presenterCell
         
         return cell
     }
@@ -95,6 +100,10 @@ extension MainViewController: UITableViewDelegate {
         let vc = DetailViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        70
+    }
 }
 
 // MARK: - UISearchResultsUpdating protocol
@@ -102,5 +111,19 @@ extension MainViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         guard let searchText = searchController.searchBar.text else { return }
         print(searchText)
+    }
+}
+
+extension MainViewController: MainViewProtocol {
+    func setContent() {
+        tableView.reloadData()
+    }
+    
+    func success() {
+        tableView.reloadData()
+    }
+    
+    func failure(error: Error) {
+        // TODO Allert
     }
 }

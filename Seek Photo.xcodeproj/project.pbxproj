@@ -21,6 +21,7 @@
 		CC17CBD62820823800940B59 /* FavoriteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC17CBD52820823800940B59 /* FavoriteCollectionViewCell.swift */; };
 		CC17CBD92820986600940B59 /* UIFont + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC17CBD82820986600940B59 /* UIFont + Extensions.swift */; };
 		CC17CBDD2820A47F00940B59 /* PictureModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC17CBDC2820A47F00940B59 /* PictureModel.swift */; };
+		CC17CBE02820A98B00940B59 /* FavoriteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC17CBDF2820A98B00940B59 /* FavoriteModel.swift */; };
 		D21A74662ACBCF61AB4368D3 /* Pods_Seek_Photo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39423ABDA52F44885D8571BF /* Pods_Seek_Photo.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		CC17CBD52820823800940B59 /* FavoriteCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCollectionViewCell.swift; sourceTree = "<group>"; };
 		CC17CBD82820986600940B59 /* UIFont + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont + Extensions.swift"; sourceTree = "<group>"; };
 		CC17CBDC2820A47F00940B59 /* PictureModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureModel.swift; sourceTree = "<group>"; };
+		CC17CBDF2820A98B00940B59 /* FavoriteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteModel.swift; sourceTree = "<group>"; };
 		CED883107360D77AFBD394E1 /* Pods-Seek Photo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Seek Photo.debug.xcconfig"; path = "Target Support Files/Pods-Seek Photo/Pods-Seek Photo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -199,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				CC17CBDC2820A47F00940B59 /* PictureModel.swift */,
+				CC17CBDF2820A98B00940B59 /* FavoriteModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 				CC17CBD92820986600940B59 /* UIFont + Extensions.swift in Sources */,
 				CC17CBDD2820A47F00940B59 /* PictureModel.swift in Sources */,
 				CC17CBD02820732500940B59 /* DetailViewController.swift in Sources */,
+				CC17CBE02820A98B00940B59 /* FavoriteModel.swift in Sources */,
 				CC17CBC3282069C500940B59 /* NetworkManager.swift in Sources */,
 				CC17CBB02820690F00940B59 /* MainViewController.swift in Sources */,
 				CC17CBC5282069D700940B59 /* StorageManager.swift in Sources */,

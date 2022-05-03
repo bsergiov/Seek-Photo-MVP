@@ -19,7 +19,6 @@ protocol MainTableViewCellPresenterProtocol: AnyObject {
     var model: PictureModel { get }
     init(view: MainTableViewCellProtocol, model: PictureModel)
     func showContent()
-    
 }
 
 class MainTableViewCellPresenter: MainTableViewCellPresenterProtocol {

@@ -9,7 +9,6 @@ import Foundation
 
 // MARK: - View Protocol
 protocol FavoriteViewProtocol: AnyObject {
-    func setContent()
     func success()
     func failure(error: Error)
     func presentDetailVC(model: DetailModel)

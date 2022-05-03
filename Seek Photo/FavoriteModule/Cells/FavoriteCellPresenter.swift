@@ -13,13 +13,13 @@ protocol FavoriteCollectionViewCellProtocol: AnyObject {
     func setContent(img: UIImage, title: String)
 }
 
+// MARK: - Presenter Protocol
 protocol FavoriteCellPresenterPresenter: AnyObject {
     var view: FavoriteCollectionViewCellProtocol { get }
     var model: DetailModel { get }
     init(view: FavoriteCollectionViewCellProtocol, model: DetailModel)
     func showContent()
 }
-
 
 class FavoriteCellPresenter: FavoriteCellPresenterPresenter {
     

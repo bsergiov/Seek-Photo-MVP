@@ -10,7 +10,7 @@ import UIKit
 
 // MARK: - View Protocol
 protocol DetailViewProtocol: AnyObject {
-    func setContent(img: UIImage, nameAuthor: String, createdAt: String, locationPublication: String, downloadsStatistic: String)
+    func setContent(img: UIImage, nameAuthor: String, createdAt: String, locationPublication: String, downloadsStatistic: String, textButton: String)
 }
 
 // MARK: - Presenter Protocol
@@ -19,8 +19,7 @@ protocol DetailPresenterProtocol: AnyObject {
     var model: DetailModel { get }
     init(view: DetailViewProtocol, model: DetailModel)
     func showContent()
-    func addedToFavorite()
-    
+    func actionUserForFavorite(actionText: String)
 }
 
 class DetailPresenter: DetailPresenterProtocol {
@@ -37,14 +36,22 @@ class DetailPresenter: DetailPresenterProtocol {
     func showContent() {
         
         guard let img = UIImage(data: model.img) else { return }
+        let textForButton = model.isFavorite
+        ? "remove"
+        : "add to favorite"
         view.setContent(img: img,
                         nameAuthor: model.nameAuthor,
                         createdAt: model.createdAt,
                         locationPublication: model.location,
-                        downloadsStatistic: "\(model.downloads)")
+                        downloadsStatistic: "\(model.downloads)", textButton: textForButton)
     }
     
-    func addedToFavorite() {
+    func actionUserForFavorite(actionText: String) {
+        if actionText == "remove" {
+            StorageManager.instance.remove(model)
+            return
+        }
+        model.isFavorite.toggle()
         StorageManager.instance.save(model)
     }
 }

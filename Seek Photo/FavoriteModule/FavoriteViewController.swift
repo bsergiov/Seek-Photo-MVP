@@ -54,6 +54,7 @@ extension FavoriteViewController {
     }
 }
 
+// MARK: - Register cell
 extension FavoriteViewController {
     private func registerCell() {
         collectionView.register(FavoriteCollectionViewCell.self,
@@ -104,18 +105,18 @@ extension FavoriteViewController: UICollectionViewDelegate {
     }
 }
 
-// MARK: -
+// MARK: - FavoriteViewProtocol
 extension FavoriteViewController: FavoriteViewProtocol {
-    func setContent() {
-        
-    }
     
     func success() {
         collectionView.reloadData()
     }
     
     func failure(error: Error) {
-        // TODO allert
+        let alert = UIAlertController(title: "Error", message: "\(error)", preferredStyle: .alert)
+        let action = UIAlertAction(title: "Ok", style: .default)
+        alert.addAction(action)
+        present(alert, animated: true)
     }
     
     func presentDetailVC(model: DetailModel) {

@@ -22,7 +22,6 @@ extension MainTableViewCell: MainTableViewCellProtocol {
         var content = defaultContentConfiguration()
         content.imageProperties.maximumSize.width = 50
         content.imageProperties.maximumSize.height = 50
-//        content.imageProperties.reservedLayoutSize = CGSize(width: 10, height: 30)
         content.imageProperties.cornerRadius = content.image?.size.height ?? 50 / 2
         content.text = title
         content.image = img

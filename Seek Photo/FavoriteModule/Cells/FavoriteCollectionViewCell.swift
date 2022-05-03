@@ -9,8 +9,6 @@ import UIKit
 
 class FavoriteCollectionViewCell: UICollectionViewCell {
     
-    
-    
     // MARK: - Public Properties
     static let id = "FavoriteCollectionViewCell"
     var presenter: FavoriteCellPresenter!
@@ -18,6 +16,8 @@ class FavoriteCollectionViewCell: UICollectionViewCell {
     // MARK: - UI Elements
     lazy private var iconImageView: UIImageView = {
         let image = UIImageView()
+        image.layer.cornerRadius = 5
+        image.clipsToBounds = true
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
@@ -47,7 +47,6 @@ extension FavoriteCollectionViewCell {
 }
 
 // MARK: - Setup Constraints
-
 extension FavoriteCollectionViewCell {
     private func setupConstraints() {
         //icon

@@ -13,7 +13,6 @@
 		CC17CBB52820691200940B59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC17CBB42820691200940B59 /* Assets.xcassets */; };
 		CC17CBC3282069C500940B59 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC17CBC2282069C500940B59 /* NetworkManager.swift */; };
 		CC17CBC5282069D700940B59 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC17CBC4282069D700940B59 /* StorageManager.swift */; };
-		CC17CBC728206A2300940B59 /* ImgCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC17CBC628206A2300940B59 /* ImgCacheManager.swift */; };
 		CC17CBCA28206C1800940B59 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC17CBC928206C1800940B59 /* MainTabBarController.swift */; };
 		CC17CBCD28206D4500940B59 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC17CBCC28206D4500940B59 /* FavoriteViewController.swift */; };
 		CC17CBD02820732500940B59 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC17CBCF2820732500940B59 /* DetailViewController.swift */; };
@@ -42,7 +41,6 @@
 		CC17CBB92820691200940B59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC17CBC2282069C500940B59 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		CC17CBC4282069D700940B59 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
-		CC17CBC628206A2300940B59 /* ImgCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgCacheManager.swift; sourceTree = "<group>"; };
 		CC17CBC928206C1800940B59 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		CC17CBCC28206D4500940B59 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		CC17CBCF2820732500940B59 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -151,7 +149,6 @@
 				CC17CBE328210F5800940B59 /* Builder.swift */,
 				CC17CBC2282069C500940B59 /* NetworkManager.swift */,
 				CC17CBC4282069D700940B59 /* StorageManager.swift */,
-				CC17CBC628206A2300940B59 /* ImgCacheManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -361,7 +358,6 @@
 				CC17CBCA28206C1800940B59 /* MainTabBarController.swift in Sources */,
 				CC17CBE82821374700940B59 /* DetailPresenter.swift in Sources */,
 				CC17CBAC2820690F00940B59 /* AppDelegate.swift in Sources */,
-				CC17CBC728206A2300940B59 /* ImgCacheManager.swift in Sources */,
 				CC17CBD62820823800940B59 /* FavoriteCollectionViewCell.swift in Sources */,
 				CC17CBCD28206D4500940B59 /* FavoriteViewController.swift in Sources */,
 				CC17CBAE2820690F00940B59 /* SceneDelegate.swift in Sources */,

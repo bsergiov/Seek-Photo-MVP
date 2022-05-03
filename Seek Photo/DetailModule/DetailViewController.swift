@@ -8,7 +8,7 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-
+    
     // MARK: - Public Properties
     var presenter: DetailPresenterProtocol!
     
@@ -16,8 +16,9 @@ class DetailViewController: UIViewController {
     lazy private var imageMainImageView: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(systemName: "person")
-        image.contentMode = .scaleAspectFit
-        
+        image.contentMode = .scaleAspectFill
+        image.clipsToBounds = true
+        image.layer.cornerRadius = 10
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
@@ -76,8 +77,9 @@ class DetailViewController: UIViewController {
 
 // MARK: - Action Methodes
 extension DetailViewController {
-    @objc private func tappedFavoriteButton() {
-        presenter.addedToFavorite()
+    @objc private func tappedFavoriteButton(_ sender: UIButton) {
+        guard let textButton = sender.titleLabel?.text else { return }
+        presenter.actionUserForFavorite(actionText: textButton)
         navigationController?.popViewController(animated: true)
     }
 }
@@ -102,6 +104,7 @@ extension DetailViewController {
         NSLayoutConstraint.activate([
             imageMainImageView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9),
             imageMainImageView.heightAnchor.constraint(equalTo: imageMainImageView.widthAnchor),
+            imageMainImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             imageMainImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
         ])
         //nameAuthorLabel
@@ -141,13 +144,15 @@ extension DetailViewController {
     }
 }
 
+// MARK: - DetailViewProtocol
 extension DetailViewController: DetailViewProtocol {
     
-    func setContent(img: UIImage, nameAuthor: String, createdAt: String, locationPublication: String, downloadsStatistic: String) {
+    func setContent(img: UIImage, nameAuthor: String, createdAt: String, locationPublication: String, downloadsStatistic: String, textButton: String) {
         imageMainImageView.image = img
         nameAuthorLabel.text = nameAuthor
         createdAtLabel.text = createdAt
         locationPublicationLabel.text = locationPublication
         downloadsStatisticLabel.text = downloadsStatistic
+        favoriteButton.setTitle(textButton, for: .normal)
     }
 }

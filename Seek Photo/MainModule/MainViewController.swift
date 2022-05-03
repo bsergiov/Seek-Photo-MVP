@@ -115,8 +115,6 @@ extension MainViewController: UITableViewDelegate {
     }
 }
 
-
-
 // MARK: - MainViewProtocol
 extension MainViewController: MainViewProtocol {
     func presentDetailVC(model: DetailModel) {
@@ -135,6 +133,10 @@ extension MainViewController: MainViewProtocol {
     }
     
     func failure(error: Error) {
-        // TODO Allert
+        let alert = UIAlertController(title: "Error",
+                                      message: "\(error)", preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "ok", style: .default)
+        alert.addAction(alertAction)
+        present(alert, animated: true)
     }
 }

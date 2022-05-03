@@ -9,6 +9,9 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
+    // MARK: - Public Properties
+    var presenter: DetailPresenterProtocol!
+    
     // MARK: - UI Elements
     lazy private var imageMainImageView: UIImageView = {
         let image = UIImageView()
@@ -74,7 +77,8 @@ class DetailViewController: UIViewController {
 // MARK: - Action Methodes
 extension DetailViewController {
     @objc private func tappedFavoriteButton() {
-        print("tappedFavoriteButton")
+        presenter.addedToFavorite()
+        navigationController?.popViewController(animated: true)
     }
 }
 
@@ -134,5 +138,16 @@ extension DetailViewController {
             favoriteButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             favoriteButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
         ])
+    }
+}
+
+extension DetailViewController: DetailViewProtocol {
+    
+    func setContent(img: UIImage, nameAuthor: String, createdAt: String, locationPublication: String, downloadsStatistic: String) {
+        imageMainImageView.image = img
+        nameAuthorLabel.text = nameAuthor
+        createdAtLabel.text = createdAt
+        locationPublicationLabel.text = locationPublication
+        downloadsStatisticLabel.text = downloadsStatistic
     }
 }

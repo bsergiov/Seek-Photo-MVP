@@ -9,20 +9,24 @@ import UIKit
 
 class FavoriteCollectionViewCell: UICollectionViewCell {
     
+    
+    
+    // MARK: - Public Properties
     static let id = "FavoriteCollectionViewCell"
+    var presenter: FavoriteCellPresenter!
     
     // MARK: - UI Elements
     lazy private var iconImageView: UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(systemName: "person")
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
     
     lazy private var titleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont(name: "Avenir Next", size: 30)
-        label.text = "ku"
+        label.font = .avenirNext25()
+        label.textColor = .darkGray
+        label.minimumScaleFactor = 0.5
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -55,9 +59,19 @@ extension FavoriteCollectionViewCell {
         ])
         //title
         NSLayoutConstraint.activate([
-            titleLabel.heightAnchor.constraint(equalToConstant: 20),
+            titleLabel.heightAnchor.constraint(equalToConstant: 25),
             titleLabel.leadingAnchor.constraint(equalTo: iconImageView.trailingAnchor, constant: 20),
             titleLabel.centerYAnchor.constraint(equalTo: iconImageView.centerYAnchor)
         ])
+    }
+}
+
+// MARK: - FavoriteCollectionViewCellProtocol
+extension FavoriteCollectionViewCell: FavoriteCollectionViewCellProtocol {
+    func setContent(img: UIImage, title: String) {
+        setupView()
+        setupConstraints()
+        titleLabel.text = title
+        iconImageView.image = img
     }
 }

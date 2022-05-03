@@ -9,24 +9,24 @@ import RealmSwift
 
 class StorageManager {
     
-    static let shared = StorageManager()
+    static let instance = StorageManager()
     
     let realm = try! Realm()
     
     private init() { }
     
-    func fetch(completion: @escaping (Results<FavoriteModel>) -> Void) {
-        let pictures = realm.objects(FavoriteModel.self)
+    func fetch(completion: @escaping (Results<DetailModel>) -> Void) {
+        let pictures = realm.objects(DetailModel.self)
         completion(pictures)
     }
     
-    func save(_ picture: FavoriteModel) {
+    func save(_ picture: DetailModel) {
         write {
             realm.add(picture)
         }
     }
     
-    func remove(_ picture: FavoriteModel) {
+    func remove(_ picture: DetailModel) {
         write {
             realm.delete(picture)
         }

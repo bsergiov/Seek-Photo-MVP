@@ -21,10 +21,13 @@
 		CC17CBD62820823800940B59 /* FavoriteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC17CBD52820823800940B59 /* FavoriteCollectionViewCell.swift */; };
 		CC17CBD92820986600940B59 /* UIFont + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC17CBD82820986600940B59 /* UIFont + Extensions.swift */; };
 		CC17CBDD2820A47F00940B59 /* PictureModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC17CBDC2820A47F00940B59 /* PictureModel.swift */; };
-		CC17CBE02820A98B00940B59 /* FavoriteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC17CBDF2820A98B00940B59 /* FavoriteModel.swift */; };
+		CC17CBE02820A98B00940B59 /* DetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC17CBDF2820A98B00940B59 /* DetailModel.swift */; };
 		CC17CBE22820AE6F00940B59 /* MainModulePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC17CBE12820AE6F00940B59 /* MainModulePresenter.swift */; };
 		CC17CBE428210F5800940B59 /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC17CBE328210F5800940B59 /* Builder.swift */; };
 		CC17CBE62821138500940B59 /* MainTableViewCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC17CBE52821138500940B59 /* MainTableViewCellPresenter.swift */; };
+		CC17CBE82821374700940B59 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC17CBE72821374700940B59 /* DetailPresenter.swift */; };
+		CC17CBEA28216EF100940B59 /* FavoritePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC17CBE928216EF100940B59 /* FavoritePresenter.swift */; };
+		CC17CBEC2821858400940B59 /* FavoriteCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC17CBEB2821858300940B59 /* FavoriteCellPresenter.swift */; };
 		D21A74662ACBCF61AB4368D3 /* Pods_Seek_Photo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39423ABDA52F44885D8571BF /* Pods_Seek_Photo.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,10 +50,14 @@
 		CC17CBD52820823800940B59 /* FavoriteCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCollectionViewCell.swift; sourceTree = "<group>"; };
 		CC17CBD82820986600940B59 /* UIFont + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont + Extensions.swift"; sourceTree = "<group>"; };
 		CC17CBDC2820A47F00940B59 /* PictureModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureModel.swift; sourceTree = "<group>"; };
-		CC17CBDF2820A98B00940B59 /* FavoriteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteModel.swift; sourceTree = "<group>"; };
+		CC17CBDF2820A98B00940B59 /* DetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
 		CC17CBE12820AE6F00940B59 /* MainModulePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModulePresenter.swift; sourceTree = "<group>"; };
 		CC17CBE328210F5800940B59 /* Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
 		CC17CBE52821138500940B59 /* MainTableViewCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCellPresenter.swift; sourceTree = "<group>"; };
+		CC17CBE72821374700940B59 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
+		CC17CBE928216EF100940B59 /* FavoritePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePresenter.swift; sourceTree = "<group>"; };
+		CC17CBEB2821858300940B59 /* FavoriteCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCellPresenter.swift; sourceTree = "<group>"; };
+		CC17CBEE2821AE4400940B59 /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 		CED883107360D77AFBD394E1 /* Pods-Seek Photo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Seek Photo.debug.xcconfig"; path = "Target Support Files/Pods-Seek Photo/Pods-Seek Photo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,6 +85,7 @@
 		CC17CB9F2820690F00940B59 = {
 			isa = PBXGroup;
 			children = (
+				CC17CBEE2821AE4400940B59 /* Readme.md */,
 				CC17CBAA2820690F00940B59 /* Seek Photo */,
 				CC17CBA92820690F00940B59 /* Products */,
 				61A93A1ADFC23FCB74CDC24D /* Pods */,
@@ -161,6 +169,7 @@
 			children = (
 				CC17CBD72820823D00940B59 /* Cells */,
 				CC17CBCC28206D4500940B59 /* FavoriteViewController.swift */,
+				CC17CBE928216EF100940B59 /* FavoritePresenter.swift */,
 			);
 			path = FavoriteModule;
 			sourceTree = "<group>";
@@ -169,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				CC17CBCF2820732500940B59 /* DetailViewController.swift */,
+				CC17CBE72821374700940B59 /* DetailPresenter.swift */,
 			);
 			path = DetailModule;
 			sourceTree = "<group>";
@@ -186,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				CC17CBD52820823800940B59 /* FavoriteCollectionViewCell.swift */,
+				CC17CBEB2821858300940B59 /* FavoriteCellPresenter.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -210,7 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				CC17CBDC2820A47F00940B59 /* PictureModel.swift */,
-				CC17CBDF2820A98B00940B59 /* FavoriteModel.swift */,
+				CC17CBDF2820A98B00940B59 /* DetailModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -339,19 +350,22 @@
 				CC17CBD92820986600940B59 /* UIFont + Extensions.swift in Sources */,
 				CC17CBDD2820A47F00940B59 /* PictureModel.swift in Sources */,
 				CC17CBD02820732500940B59 /* DetailViewController.swift in Sources */,
-				CC17CBE02820A98B00940B59 /* FavoriteModel.swift in Sources */,
+				CC17CBE02820A98B00940B59 /* DetailModel.swift in Sources */,
 				CC17CBE22820AE6F00940B59 /* MainModulePresenter.swift in Sources */,
 				CC17CBC3282069C500940B59 /* NetworkManager.swift in Sources */,
 				CC17CBB02820690F00940B59 /* MainViewController.swift in Sources */,
 				CC17CBE62821138500940B59 /* MainTableViewCellPresenter.swift in Sources */,
 				CC17CBC5282069D700940B59 /* StorageManager.swift in Sources */,
 				CC17CBD4282079E300940B59 /* MainTableViewCell.swift in Sources */,
+				CC17CBEA28216EF100940B59 /* FavoritePresenter.swift in Sources */,
 				CC17CBCA28206C1800940B59 /* MainTabBarController.swift in Sources */,
+				CC17CBE82821374700940B59 /* DetailPresenter.swift in Sources */,
 				CC17CBAC2820690F00940B59 /* AppDelegate.swift in Sources */,
 				CC17CBC728206A2300940B59 /* ImgCacheManager.swift in Sources */,
 				CC17CBD62820823800940B59 /* FavoriteCollectionViewCell.swift in Sources */,
 				CC17CBCD28206D4500940B59 /* FavoriteViewController.swift in Sources */,
 				CC17CBAE2820690F00940B59 /* SceneDelegate.swift in Sources */,
+				CC17CBEC2821858400940B59 /* FavoriteCellPresenter.swift in Sources */,
 				CC17CBE428210F5800940B59 /* Builder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

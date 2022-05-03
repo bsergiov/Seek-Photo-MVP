@@ -13,31 +13,29 @@ protocol MainViewProtocol: AnyObject {
     func setContent()
     func success()
     func failure(error: Error)
+    func presentDetailVC(model: DetailModel)
 }
 
 // MARK: - Output Protocol
 protocol MainPresenterProtocol: AnyObject {
     var model: [PictureModel]? { get set }
-    var networkManager: NetworkManagerProtocol { get }
-    init(view: MainViewProtocol, networkManager: NetworkManagerProtocol)
+    init(view: MainViewProtocol)
     func fetchRandomPhoto()
     func fetchByKeyword(for keyword: String)
+    func tappedForCell(model: PictureModel)
 }
 
 class MainModulePresenter: MainPresenterProtocol {
-   
     unowned let view: MainViewProtocol
-    let networkManager: NetworkManagerProtocol
     var model: [PictureModel]?
     
-    required init(view: MainViewProtocol, networkManager: NetworkManagerProtocol) {
+    required init(view: MainViewProtocol) {
         self.view = view
-        self.networkManager = networkManager
         fetchRandomPhoto()
     }
     
     func fetchRandomPhoto() {
-        networkManager.fetch(dataType: [PictureModel].self) { [weak self] result in
+        NetworkManager.instance.fetch(dataType: [PictureModel].self) { [weak self] result in
             guard let self = self else { return }
             DispatchQueue.main.async {
                 switch result {
@@ -53,7 +51,7 @@ class MainModulePresenter: MainPresenterProtocol {
     }
     
     func fetchByKeyword(for keyword: String) {
-        networkManager.fetch(dataType: SearchModel.self, query: keyword) { [weak self] result in
+        NetworkManager.instance.fetch(dataType: SearchModel.self, query: keyword) { [weak self] result in
             guard let self = self else { return }
             DispatchQueue.main.async {
                 switch result {
@@ -65,6 +63,24 @@ class MainModulePresenter: MainPresenterProtocol {
                 case .failure(let error):
                     print("Not result \(error)")
                 }
+            }
+        }
+    }
+    
+    func tappedForCell(model: PictureModel) {
+        NetworkManager.instance.fetchData(from: model.urls.small) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let data):
+                let detailModel = DetailModel()
+                detailModel.createdAt = model.createdAt
+                detailModel.nameAuthor = model.user.name
+                detailModel.img = data
+                detailModel.location = model.user.location ?? "Private Location"
+                detailModel.downloads = model.downloads ?? 0
+                self.view.presentDetailVC(model: detailModel)
+            case .failure(let error):
+                print("Error fetch dataImg \(error)")
             }
         }
     }

@@ -19,7 +19,7 @@ protocol MainTableViewCellPresenterProtocol: AnyObject {
     var model: PictureModel { get }
     init(view: MainTableViewCellProtocol, model: PictureModel)
     func showContent()
-    func showSpiner()
+    
 }
 
 class MainTableViewCellPresenter: MainTableViewCellPresenterProtocol {
@@ -34,13 +34,13 @@ class MainTableViewCellPresenter: MainTableViewCellPresenterProtocol {
     }
     
     func showContent() {
-        let networkManager = NetworkManager()
         DispatchQueue.main.async {
-            networkManager.fetchData(from: self.model.urls.thumb) {[weak self] result in
+            NetworkManager.instance.fetchData(from: self.model.urls.thumb) {[weak self] result in
                 guard let self = self else { return }
                 switch result {
                 case .success(let data):
                     guard let image = UIImage(data: data) else { return }
+                    
                     self.view.setContent(title: self.model.user.name, img: image)
                 case .failure(let error):
                     print("error fetch data image \(error)")
@@ -48,8 +48,4 @@ class MainTableViewCellPresenter: MainTableViewCellPresenterProtocol {
             }
         }
     }
-    
-    func showSpiner() {
-        
-    } 
 }

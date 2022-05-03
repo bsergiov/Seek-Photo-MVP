@@ -18,7 +18,12 @@ class MainTableViewCell: UITableViewCell {
 // MARK: - MainTableViewCellProtocol
 extension MainTableViewCell: MainTableViewCellProtocol {
     func setContent(title: String, img: UIImage) {
+       
         var content = defaultContentConfiguration()
+        content.imageProperties.maximumSize.width = 50
+        content.imageProperties.maximumSize.height = 50
+//        content.imageProperties.reservedLayoutSize = CGSize(width: 10, height: 30)
+        content.imageProperties.cornerRadius = content.image?.size.height ?? 50 / 2
         content.text = title
         content.image = img
         contentConfiguration = content

@@ -13,13 +13,12 @@ enum NetworkError: Error {
     case decodingError
 }
 
-protocol NetworkManagerProtocol {
-    func fetch<T: Codable>(dataType: T.Type, completion: @escaping (Result<T,NetworkError>) -> Void)
-    func fetch<T: Codable>(dataType: T.Type, query: String, completion:  @escaping (Result<T, NetworkError>) -> Void)
-    func fetchData(from urlString: String, completion: @escaping(Result<Data, Error>) -> Void)
-}
 
-class NetworkManager: NetworkManagerProtocol {
+class NetworkManager {
+    
+    static let instance = NetworkManager()
+    
+    private init() { }
     
     // MARK: - Generic Methodes fetch model
     func fetch<T: Codable>(dataType: T.Type, completion:  @escaping (Result<T, NetworkError>) -> Void) {

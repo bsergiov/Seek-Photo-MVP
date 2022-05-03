@@ -16,15 +16,15 @@ class ModelBuilder: Builder {
     
     static func createMainModule() -> UIViewController {
         let view = MainViewController()
-        let networkManager = NetworkManager()
-        let presenter = MainModulePresenter(view: view, networkManager: networkManager)
+        let presenter = MainModulePresenter(view: view)
         view.presenter = presenter
         return view
     }
     
     static func createFavoriteModule() -> UIViewController {
         let view = FavoriteViewController()
-        
+        let presenter = FavoritePresenter(view: view)
+        view.presenter = presenter
         return view
     }
     

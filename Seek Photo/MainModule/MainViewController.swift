@@ -15,7 +15,6 @@ class MainViewController: UIViewController {
     // MARK: - UI Elements
     lazy private var searcBar: UISearchController = {
         let searcher = UISearchController(searchResultsController: nil)
-        searcher.searchResultsUpdater = self
         searcher.obscuresBackgroundDuringPresentation = false
         searcher.searchBar.placeholder = "Search Photo"
         
@@ -66,6 +65,16 @@ extension MainViewController {
     private func setupDelegate() {
         tableView.dataSource = self
         tableView.delegate = self
+        searcBar.searchBar.delegate = self
+    }
+}
+
+// MARK: -
+extension MainViewController: UISearchBarDelegate {
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        guard let keyword = searchBar.text else { return}
+        if keyword.isEmpty { return }
+        presenter.fetchByKeyword(for: keyword)
     }
 }
 
@@ -97,8 +106,8 @@ extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         // navigation
-        let vc = DetailViewController()
-        navigationController?.pushViewController(vc, animated: true)
+        guard let photos = presenter.model else { return }
+        presenter.tappedForCell(model: photos[indexPath.row])
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -106,15 +115,17 @@ extension MainViewController: UITableViewDelegate {
     }
 }
 
-// MARK: - UISearchResultsUpdating protocol
-extension MainViewController: UISearchResultsUpdating {
-    func updateSearchResults(for searchController: UISearchController) {
-        guard let searchText = searchController.searchBar.text else { return }
-        print(searchText)
-    }
-}
 
+
+// MARK: - MainViewProtocol
 extension MainViewController: MainViewProtocol {
+    func presentDetailVC(model: DetailModel) {
+        let detailViewConroller = DetailViewController()
+        let presenterDetail = DetailPresenter(view: detailViewConroller, model: model)
+        detailViewConroller.presenter = presenterDetail
+        navigationController?.pushViewController(detailViewConroller, animated: true)
+    }
+    
     func setContent() {
         tableView.reloadData()
     }
